@@ -1,0 +1,38 @@
+<svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sedanGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5f5f5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d4d4d4;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="120" fill="#f8f9fa"/>
+  
+  <!-- Car Body (Sedan - longer) -->
+  <ellipse cx="100" cy="75" rx="75" ry="20" fill="url(#sedanGradient)" stroke="#888" stroke-width="2"/>
+  
+  <!-- Roof (shorter for sedan profile) -->
+  <ellipse cx="90" cy="55" rx="40" ry="12" fill="url(#sedanGradient)" stroke="#888" stroke-width="1.5"/>
+  
+  <!-- Trunk -->
+  <ellipse cx="145" cy="70" rx="25" ry="12" fill="url(#sedanGradient)" stroke="#888" stroke-width="1"/>
+  
+  <!-- Wheels -->
+  <circle cx="60" cy="85" r="12" fill="#333" stroke="#222" stroke-width="2"/>
+  <circle cx="140" cy="85" r="12" fill="#333" stroke="#222" stroke-width="2"/>
+  <circle cx="60" cy="85" r="6" fill="#666"/>
+  <circle cx="140" cy="85" r="6" fill="#666"/>
+  
+  <!-- Windows -->
+  <ellipse cx="90" cy="58" rx="32" ry="8" fill="#87CEEB" opacity="0.7"/>
+  
+  <!-- Lights -->
+  <ellipse cx="165" cy="68" rx="8" ry="4" fill="#ffffcc"/>
+  <ellipse cx="35" cy="68" rx="8" ry="4" fill="#ffcccc"/>
+  
+  <!-- Text Label -->
+  <text x="100" y="110" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+    Honda City
+  </text>
+</svg>

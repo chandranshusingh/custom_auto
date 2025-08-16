@@ -1,0 +1,249 @@
+# Cursor Rules for Auto Customizer Development
+
+## 🎯 Project Context
+**Auto Customizer: Local Prototype with TDD** - Next.js 14+, React Three Fiber, TypeScript. TDD-driven local prototype development for 3D car customization platform.
+
+## ✅ Core Development Principles
+
+### TDD-First Development (MANDATORY FOR PROTOTYPE)
+- **RED**: Write failing test first - no exceptions, even for prototype
+- **GREEN**: Write minimum code to pass test
+- **REFACTOR**: Improve code while keeping tests green
+- **ZERO TOLERANCE**: No code without tests, no failing tests in commits
+- **PROTOTYPE FOCUS**: TDD ensures faster, more reliable prototype development
+
+### Code Quality Standards (ABSOLUTE)
+- **TypeScript**: Strict mode, ZERO compilation errors, specific error types only
+- **ESLint**: ZERO errors/warnings - fix immediately or justified disable with comment
+- **Prettier**: Auto-format on save - no manual formatting discussions
+- **React**: Single responsibility, proper hooks, error boundaries for 3D
+- **3D Performance**: 60 FPS desktop, 30 FPS mobile minimum
+
+### Anti-Hallucination & Verification
+- **VERIFY**: All APIs/features exist in official docs before use
+- **TEST**: Commands work before suggesting them
+- **NO ASSUMPTIONS**: Check compatibility, versions, syntax
+- **BREAK CYCLES**: Try different approach after 2 failed attempts
+
+### Systematic Development Workflow (PROTOTYPE TDD)
+1. **Plan**: Define component/feature with TypeScript interfaces (keep simple for prototype)
+2. **Test**: Write failing test first (Jest + React Testing Library) - MANDATORY
+3. **Code**: Implement minimum code to pass test
+4. **Verify**: TypeScript compile + ESLint pass + all tests green
+5. **Refactor**: Improve code while keeping tests green
+6. **Commit**: Only when all checks pass (tests, linting, compilation)
+7. **Document**: Update progress in TODO lists
+
+## 🔧 Quality Automation & Error Handling
+
+### Zero-Tolerance Quality Gates
+```bash
+# Pre-commit checklist (all must pass)
+npx tsc --noEmit        # TypeScript compilation
+npm run lint            # ESLint validation  
+npm run format          # Prettier formatting
+npm test               # Test suite
+```
+
+### Specific Error Handling (NEVER use generic Error)
+```typescript
+// ✅ GOOD: Specific error types
+interface APIError extends Error {
+  statusCode: number;
+  endpoint: string;
+}
+
+class WebGLError extends Error {
+  constructor(message: string, public context?: string) {
+    super(`WebGL Error: ${message}`);
+  }
+}
+
+// ❌ BAD: Generic catching
+try { /* */ } catch (error) { /* too generic */ }
+```
+
+### ESLint Disables (Use Sparingly)
+Only for 3D/framework compatibility with detailed justification:
+```typescript
+/* eslint-disable react/no-unknown-property */
+// React Three Fiber requires 3D props not recognized by React
+<mesh position={[0, 0, 0]} rotation={[0, Math.PI, 0]} />
+```
+
+### Efficient TDD File Workflow
+```bash
+# 1. Create failing test
+touch src/__tests__/Feature.test.tsx
+
+# 2. TDD development cycle
+npm run test:watch  # Keep running during development
+
+# 3. Quality validation (must pass before commit)
+npm run validate    # Runs: tsc + eslint + prettier + test
+```
+
+## 📚 Essential Documentation (Minimal Maintenance)
+
+### Core Documents Only
+- `README.md` - Project overview & quick start
+- `docs/Phase_1_TODO_List.md` - Prototype TDD development priorities  
+- `docs/Project_Master_Context.md` - Architecture overview
+- `docs/Development_Status_Dashboard.md` - Project progress tracking (MANDATORY UPDATES)
+- `Technical Development Document.md` - Phase implementation plan
+
+### Update Strategy
+- **Batch updates** - consolidate changes
+- **Essential only** - no temporary docs
+- **Feature complete** - update when feature fully implemented
+
+### Development Status Dashboard Updates (MANDATORY)
+**CRITICAL:** Always update `docs/Development_Status_Dashboard.md` for:
+
+#### Task/Story Completion Updates
+- **When any task is completed:** Update task status from ⏳ Pending to ✅ Complete
+- **When user story is finished:** Update completion percentage and status
+- **When sprint is completed:** Update sprint progress table
+- **Daily progress:** Update current task status and completion percentages
+
+#### Phase Completion Updates (MANDATORY)
+When ANY phase is completed, MUST update dashboard with:
+1. **Completion Status:** Mark phase as ✅ COMPLETED with date
+2. **Final Metrics:** Update all quality metrics (test coverage, performance, etc.)
+3. **Lessons Learned:** Add comprehensive "What Worked Well" and "Areas for Improvement" sections
+4. **Key Success Factors:** Document critical factors that enabled phase success
+5. **Pending Tasks:** List any incomplete tasks or technical debt
+6. **Additional Tasks/Enhancements:** Document tasks discovered during development
+7. **Future Enhancement Suggestions:** Recommendations for next phase or future iterations
+8. **Risk Assessment Updates:** Update risk status based on phase experience
+9. **Performance Metrics:** Record final performance benchmarks achieved
+10. **Next Phase Preparation:** Update readiness status and dependencies
+
+#### Quality Gate Updates
+- **Test Coverage Changes:** Update whenever coverage metrics change significantly
+- **Performance Benchmarks:** Update when 3D performance targets are tested
+- **TypeScript/ESLint Status:** Update when quality gates status changes
+
+#### Weekly Updates (Every Friday)
+- **Sprint Progress:** Update current sprint status and velocity
+- **Risk Assessment:** Review and update current risks
+- **Quality Metrics:** Update test coverage, performance, and quality indicators
+- **Next Actions:** Update immediate priorities and weekly focus areas
+
+#### Document Update Commands
+```bash
+# Always update dashboard when completing tasks:
+# 1. Open docs/Development_Status_Dashboard.md
+# 2. Find relevant section (User Story status, Sprint Progress, etc.)
+# 3. Update status from ⏳ Pending to 🚧 In Progress to ✅ Complete
+# 4. Update completion percentages
+# 5. Add any lessons learned or notes
+# 6. Commit changes with meaningful message
+git add docs/Development_Status_Dashboard.md
+git commit -m "Update status: [Task/Story] completed with [brief outcome]"
+```
+
+### Cleanup Strategy
+```bash
+# Quick cleanup (run weekly)
+npm run clean        # Remove build artifacts
+npm run lint:fix     # Auto-fix linting issues
+npm run format       # Auto-format all files
+
+# Deep cleanup (run monthly)
+find . -name "*.tmp" -delete    # Remove temp files
+rm -rf coverage __tests__/temp  # Remove test artifacts
+```
+
+## 🎯 Current Phase: Local Prototype Development
+**Requirements**: Next.js + React Three Fiber, TDD approach, localStorage only, no external services
+
+## 🛤️ Efficient Project Structure
+
+### Feature-Sliced Architecture
+```
+src/
+├── app/              # Next.js App Router
+├── components/ui/    # Shared UI components  
+├── features/         # Feature modules
+├── lib/              # Utilities
+├── types/            # TypeScript interfaces
+└── __tests__/        # Test files
+```
+
+### Import Standards
+```typescript
+// Import order: React → Libraries → Internal → Types
+import React from 'react'
+import { Canvas } from '@react-three/fiber'
+import { VehicleSelector } from '@/features/vehicle-selector'
+import { IVehicle } from '@/types'
+```
+
+### Issue Investigation
+1. **Write test** that reproduces the issue
+2. **Fix issue** following TDD cycle
+3. **Verify fix** doesn't break existing tests
+
+## 🚀 Essential Commands
+
+### Setup & Development
+```bash
+npm install              # Install dependencies
+npm run dev             # Start dev server  
+npm run test:watch      # TDD mode (keep running)
+npm run validate        # Full quality check before commit
+```
+
+### Git Workflow (Quality-Gated)
+```bash
+git checkout -b feature/name    # New branch
+# TDD development with test:watch running
+npm run validate               # Must pass before commit
+git add . && git commit -m "feat: description"
+```
+
+## 🎯 Performance & Quality Targets
+
+### 3D Performance Requirements
+- **Desktop**: 60 FPS minimum
+- **Mobile**: 30 FPS minimum  
+- **Load Time**: <5s for 3D models
+- **Memory**: <1GB for complete scene
+
+### API Endpoints (Phase 2+)
+- `GET /api/vehicles` - Vehicle data
+- `GET /api/parts/{category}` - Parts data  
+- Client-side localStorage for builds
+
+## 🚨 Critical Quality Requirements
+
+### Absolute Requirements (Zero Tolerance)
+- **TypeScript compilation**: ZERO errors
+- **ESLint**: ZERO warnings/errors  
+- **Tests**: All pass, 90%+ coverage
+- **3D Performance**: 60 FPS desktop, 30 FPS mobile
+- **Error Handling**: Specific types only (no generic catch)
+
+### Security & Validation
+- **Input validation**: TypeScript interfaces for all data
+- **3D Models**: Validate .glb/.gltf files before loading  
+- **API Routes**: Proper validation and CORS configuration
+- **Environment**: Secure .env.local for API keys
+
+## 🎯 Success Criteria
+
+### Task Complete When (PROTOTYPE TDD CRITERIA):
+- [ ] All tests written FIRST and pass (RED-GREEN-REFACTOR cycle complete)
+- [ ] Test coverage >85% for prototype components
+- [ ] TypeScript compiles with zero errors
+- [ ] ESLint passes with zero warnings
+- [ ] 3D performance reasonable for prototype (30+ FPS minimum)
+- [ ] Feature works end-to-end in browser
+- [ ] No generic error handling used (specific exceptions only)
+- [ ] **Development Status Dashboard updated** with test coverage metrics
+- [ ] **TODO list updated** with next TDD tasks
+
+---
+
+**TDD-focused prototype development rules for Auto Customizer. Mandatory: write tests first even for prototypes, maintain quality while keeping scope simple. Fast, reliable prototype through systematic testing.**

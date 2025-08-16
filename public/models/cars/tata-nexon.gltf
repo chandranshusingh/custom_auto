@@ -1,0 +1,218 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Auto Customizer - Tata Nexon Compact SUV Model"
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [0, 1, 2, 3, 4, 5]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "NexonBody",
+      "mesh": 0,
+      "translation": [0, 0.2, 0]
+    },
+    {
+      "name": "NexonRoof", 
+      "mesh": 1,
+      "translation": [0, 1.0, -0.2]
+    },
+    {
+      "name": "WheelFL",
+      "mesh": 2,
+      "translation": [-1.0, -0.3, 1.2]
+    },
+    {
+      "name": "WheelFR",
+      "mesh": 2,
+      "translation": [1.0, -0.3, 1.2]
+    },
+    {
+      "name": "WheelRL",
+      "mesh": 2,
+      "translation": [-1.0, -0.3, -1.2]
+    },
+    {
+      "name": "WheelRR",
+      "mesh": 2,
+      "translation": [1.0, -0.3, -1.2]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "SUVBody",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 0,
+            "NORMAL": 1
+          },
+          "indices": 2,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "SUVRoof",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 3,
+            "NORMAL": 4
+          },
+          "indices": 5,
+          "material": 0
+        }
+      ]
+    },
+    {
+      "name": "SUVWheel",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 6,
+            "NORMAL": 7
+          },
+          "indices": 8,
+          "material": 1
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "NexonCarPaint",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [0.2, 0.4, 0.8, 1.0],
+        "metallicFactor": 0.5,
+        "roughnessFactor": 0.2
+      }
+    },
+    {
+      "name": "SUVTireMaterial",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [0.1, 0.1, 0.1, 1.0],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.9
+      }
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "max": [1.2, 0.8, 2.1],
+      "min": [-1.2, -0.5, -2.1]
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "max": [1.0, 0.3, 1.8],
+      "min": [-1.0, -0.3, -1.8]
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3",
+      "max": [0.35, 0.35, 0.12],
+      "min": [-0.35, -0.35, -0.12]
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 24,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5123,
+      "count": 36,
+      "type": "SCALAR"
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 288,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 576,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 648,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 936,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1224,
+      "byteLength": 72
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1296,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1584,
+      "byteLength": 288
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 1872,
+      "byteLength": 72
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "data:application/octet-stream;base64,AAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAABAAABAAAAAQAAAAEAAAAB",
+      "byteLength": 1944
+    }
+  ]
+}

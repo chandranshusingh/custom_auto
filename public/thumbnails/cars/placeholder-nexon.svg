@@ -1,0 +1,38 @@
+<svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="suvGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4a90e2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#357abd;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="200" height="120" fill="#f8f9fa"/>
+  
+  <!-- Car Body (Compact SUV) -->
+  <rect x="35" y="60" width="130" height="35" rx="15" fill="url(#suvGradient)" stroke="#2c5aa0" stroke-width="2"/>
+  
+  <!-- Roof -->
+  <rect x="45" y="45" width="110" height="20" rx="10" fill="url(#suvGradient)" stroke="#2c5aa0" stroke-width="1.5"/>
+  
+  <!-- Wheels (Larger for SUV) -->
+  <circle cx="65" cy="90" r="14" fill="#333" stroke="#222" stroke-width="2"/>
+  <circle cx="135" cy="90" r="14" fill="#333" stroke="#222" stroke-width="2"/>
+  <circle cx="65" cy="90" r="8" fill="#666"/>
+  <circle cx="135" cy="90" r="8" fill="#666"/>
+  
+  <!-- Windows -->
+  <rect x="55" y="48" width="90" height="12" rx="6" fill="#87CEEB" opacity="0.7"/>
+  
+  <!-- Lights -->
+  <ellipse cx="155" cy="72" rx="8" ry="5" fill="#ffffcc"/>
+  <ellipse cx="45" cy="72" rx="8" ry="5" fill="#ffcccc"/>
+  
+  <!-- Ground clearance line -->
+  <line x1="35" y1="105" x2="165" y2="105" stroke="#ddd" stroke-width="1"/>
+  
+  <!-- Text Label -->
+  <text x="100" y="110" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">
+    Tata Nexon
+  </text>
+</svg>
